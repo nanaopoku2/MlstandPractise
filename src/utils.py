@@ -22,11 +22,12 @@ def save_object(file_path, obj):
         raise CustomeException(e,sys)     
     
 
-def evaluate_models(x_train,y_train,x_test, y_test,models):
+def evaluate_models(x_train,y_train,x_test, y_test,models,param):
     try:
         report = {}
         for i in range(len(list(models))):
             model = list(models.values())[i]
+            para=param[list(models.keys())[i]]
 
             model.fit(x_train, y_train) # x_train model
 
